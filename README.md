@@ -4,7 +4,8 @@ CE5_Eichman
 ###Assembly Program
 ```
 lw $S0 44 ($0)#loads the value 44 into $S0
-lw $S1 -37 ($0) #loads the value -37 into $S0
+lw $S1 37 ($0) #loads the value 37 into $S1
+neg.s $S1 $S1 ($S0) #makes $S1 negative
 add $S2 $S0 $S1 #Adds $S0 and $S1 and stores it in $S2
 ```
 
