@@ -2,6 +2,12 @@ CE5_Eichman
 ===========
 ##Task 1 (5pts all or nothing)
 ###Assembly Program
+```
+lw $S0 44 
+lw $S1 -37
+add $S2 $S0 $S1
+```
+
 ##Task 2 (35pts)
 ###Machine Code
 ###Signal Descriptions
