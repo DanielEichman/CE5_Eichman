@@ -226,7 +226,7 @@ begin
   branch   <= controls(5);
   memwrite <= controls(4);
   memtoreg <= controls(3);
-  jump     <= controls(2);-- way to confuse eveyone and make this backwards than in the table
+  jump     <= controls(2);-- way to confuse everyone and make this backwards than in the table
   aluop    <= controls(1 downto 0);
 end;
 
@@ -319,7 +319,7 @@ begin
 
   -- ALU logic
   --srcbmux: mux2 generic map(32) port map(writedata, signimm, alusrc, srcb);
-  srcbmux: mux4 generic map(32) port map(writedata, signimm,zeroexted,"11100000000000000000000000000000", alusrc, srcb);
+  srcbmux: mux4 generic map(32) port map(writedata, signimm,zeroexted,"00000000000000000000000000000000", alusrc, srcb);
   mainalu:  alu port map(srca, srcb, alucontrol, aluout, zero);
 end;
 
