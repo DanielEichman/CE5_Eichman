@@ -97,3 +97,5 @@ It works! After implementing the following instruction:
 instr <= X"36538000"; --ori $S3, $S2, x8000
 ```
 This ORed the value at $S2 (0007) and the immediate value of (8000) then stored it in $S3 (memory location 19). As you can see from the image the result stored was (8007).
+###Documentation
+C3C Sean Bapty helped be explain how to edited the schematic and explain why we need a zero extender.
