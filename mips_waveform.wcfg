@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="C:/PATH TO YOUR .wdb FILE" id="1" type="auto">
+      <db_ref path="C:/Users/C16Daniel.Eichman/Documents/AFA/ECE281Dir/CE5_Eichman/mips_tb_isim_beh.wdb" id="1" type="auto">
          <top_modules>
             <top_module name="mips_tb" />
             <top_module name="std_logic_1164" />
