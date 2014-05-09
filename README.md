@@ -34,3 +34,8 @@ To do a OR immediate function a zero extender is needed to extend the 16 bit imm
 ###VHDL Modifications
 ###Testing Waveform
 ![image](https://raw.githubusercontent.com/DanielEichman/CE5_Eichman/master/Task3.JPG)
+It works! After implementing the following instuction:
+```
+ori $S3, $S2, x8000
+```
+This ORed the value at $S2 (0007) and the immediate value of (8000) then stored it in $S3 (memory location 19). As you can see from the image the result stored was (8007).
