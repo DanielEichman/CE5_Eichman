@@ -23,10 +23,12 @@ sw $s2 84 ($0) #0xAC120054
 ###Signal Descriptions
 This makes sense because at the end of the program $S0 should have the value 44, $S1 should have the value -37, and $S2 should have 44 -37 =7. $S0, registar 16, has the value 0x2C which is 44.  $S1, registar 17, has the value 0xFFDB which is -37.  $S2, registar 18, has the value 0x07 which is 7.  
 ##Task 3 (60pts)
-###Design (20 pts):
 ###Schematic Modification
+![image](https://raw.githubusercontent.com/DanielEichman/CE5_Eichman/master/Schematic.jpg)
 ###ALU Decoder Table Modification
+![image](https://raw.githubusercontent.com/DanielEichman/CE5_Eichman/master/ALU_Decoder_Table.JPG)
 ###Main Decoder Modification
+![image](https://raw.githubusercontent.com/DanielEichman/CE5_Eichman/master/Main_Decoder_Table.JPG)
 ###Functionality (40 pts)
 ###VHDL Modifications
 ###Testing Waveform
