@@ -31,8 +31,64 @@ To do a OR immediate function a zero extender is needed to extend the 16 bit imm
 ![image](https://raw.githubusercontent.com/DanielEichman/CE5_Eichman/master/ALU_Decoder_Table.JPG)
 ###Main Decoder Modification
 ![image](https://raw.githubusercontent.com/DanielEichman/CE5_Eichman/master/Main_Decoder_Table.JPG)
-###Functionality (40 pts)
 ###VHDL Modifications
+#####Zero Extender 
+The fist thing you have to do is create a zero extende, as it is needed to properly calculate the OR
+```
+architecture behave of zeroext is--extends zeros to the last 15 bits
+begin
+  y <= X"0000" & a; 
+end;
+```
+```
+ze: zeroext port map(instr(15 downto 0), zeroexted);
+```
+#####Four Way MUX
+The next thing you have to do is create a 4 way mux, as it is needed to determin SrcB.
+```
+architecture behave of mux4 is -- this is a four input mux
+begin
+  y <= d0 when s = "00" else 
+		 d1 when s = "01" else
+		 d2 when s = "10" else
+		 d3;
+end;
+```
+```
+srcbmux: mux4 generic map(32) port map(writedata, signimm,zeroexted,"00000000000000000000000000000000", alusrc, srcb);
+```
+#####Main Decoder
+There are two things that have to change with this. First is adding the ORI command. Along with that you must change control signals to meet the requirements. Secondly alusrc was changed from 1 bit to 2. There are many many other locations where you have to redeclare the singal as an STD_LOGIC_VECTOR (1 downto 0) which I will not show. 
+```
+begin
+  process(op) begin
+    case op is
+      when "000000" => controls <= "1100000010"; -- Rtype
+      when "100011" => controls <= "1001001000"; -- LW
+      when "101011" => controls <= "0001010000"; -- SW
+      when "000100" => controls <= "0000100001"; -- BEQ
+      when "001000" => controls <= "1001000000"; -- ADDI
+      when "000010" => controls <= "0000000100"; -- J
+		when "001101" => controls <= "1010000011"; -- ORI 
+      when others   => controls <= "----------"; -- illegal op
+    end case;
+  end process;
+
+  regwrite <= controls(9);
+  regdst   <= controls(8);
+  alusrc   <= controls(7)&controls(6);
+  branch   <= controls(5);
+  memwrite <= controls(4);
+  memtoreg <= controls(3);
+  jump     <= controls(2);-- way to confuse eveyone and make this backwards than in the table
+  aluop    <= controls(1 downto 0);
+end;
+```
+#####ALU Decoder
+The following line was added to the ALU Decoder so that when 11 is received from the ALUOp the ALU will be set to OR.
+```
+when "11" => alucontrol <= "001"; -- ORI set ALU to A or B
+```
 ###Testing Waveform
 ![image](https://raw.githubusercontent.com/DanielEichman/CE5_Eichman/master/Task3.JPG)
 
