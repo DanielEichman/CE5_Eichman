@@ -25,6 +25,7 @@ This makes sense because at the end of the program $S0 should have the value 44,
 ##Task 3 (60pts)
 ###Schematic Modification
 ![image](https://raw.githubusercontent.com/DanielEichman/CE5_Eichman/master/Schematic.jpg)
+To do a OR immediate function a zero extender is needed to extend the 16 bit immediate value to 32 bits. You want to extend it with zero's because the function is OR and if we extend it with one's then 32:16 will always be true. Because of this there are now three inputs to the ALU and a different MUX will be needed to select the right ScrB. Also the ALUScr will need to be 2 bits long. 
 ###ALU Decoder Table Modification
 ![image](https://raw.githubusercontent.com/DanielEichman/CE5_Eichman/master/ALU_Decoder_Table.JPG)
 ###Main Decoder Modification
