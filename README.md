@@ -33,3 +33,4 @@ To do a OR immediate function a zero extender is needed to extend the 16 bit imm
 ###Functionality (40 pts)
 ###VHDL Modifications
 ###Testing Waveform
+![image](https://raw.githubusercontent.com/DanielEichman/CE5_Eichman/master/Task3.JPG)
