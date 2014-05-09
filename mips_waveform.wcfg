@@ -12,7 +12,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="14" />
+   <WVObjectSize size="19" />
    <wvobject fp_name="/mips_tb/clk" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -73,6 +73,26 @@
    <wvobject fp_name="/mips_tb/uut/dp/rf/we3" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">we3</obj_property>
       <obj_property name="ObjectShortName">we3</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mips_tb/uut/dp/srca" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">srca[31:0]</obj_property>
+      <obj_property name="ObjectShortName">srca[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mips_tb/uut/dp/srcb" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">srcb[31:0]</obj_property>
+      <obj_property name="ObjectShortName">srcb[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mips_tb/uut/dp/mainalu/alucontrol" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">alucontrol[2:0]</obj_property>
+      <obj_property name="ObjectShortName">alucontrol[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mips_tb/uut/dp/mainalu/result" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mips_tb/uut/dp/result" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">result[31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/mips_tb/uut/dp/rf/mem" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">mem[31:0]</obj_property>
